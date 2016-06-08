@@ -1,0 +1,46 @@
+[{
+    "id": "NEW",
+    "name": "菜鳥新手",
+    "kai": 100
+}, {
+    "id": "FIGHTER",
+    "name": "武士",
+    "kai": 500,
+    "req": {
+        "class": ["NEW"],
+        "str": 50
+    },
+    "eff": {
+        "str": 1.1,
+        "mp": 0.5
+    }
+}, {
+    "id": "LEADER",
+    "name": "隊長",
+    "req": {
+        "class": ["FIGHTER"],
+        "str": 100,
+        "dex": 50,
+        "vit": 50
+    },
+    "eff": {
+        "str": 1.2,
+        "mp": 0.7,
+        "dex": 1.1,
+        "vit": 1.1
+    }
+}, {
+    "id": "DRAGON",
+    "name": "龍騎士",
+    "req": {
+        "class": ["FIGHTER"],
+        "str": 500,
+        "dex": 100,
+        "vit": 100
+    },
+    "eff": {
+        "str": 1.4,
+        "dex": 1.2,
+        "vit": 1.1
+    }
+}]

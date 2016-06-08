@@ -1,8 +1,24 @@
-var gameServer = require('GameService')({name:'GameServer',port:8888});
+'use strict';
+let isDEV = process.env.NODE_ENV !== 'production';
+let cfg = require('./config.json');
+let mongoose = require('mongoose');
+let data = require('./data');
+let game = {
+    cfg: cfg,
+    data: data
+};
 
+if (isDEV) {
+    cfg.db.mongodb.server = 'localhost';
+}
+mongoose.connect('mongodb://' + cfg.db.mongodb.server + '/' + cfg.db.mongodb.db, {
+    user: cfg.db.mongodb.user,
+    pass: cfg.db.mongodb.pass
+});
 
-gameServer.connectServer({name:'DataServer',host:'localhost',port:9988});
+let Storage = require('./storage')(mongoose);
 
-gameServer.connectServer({name:'ConfigServer',host:'localhost',port:3355});
-
-gameServer.connectServer({name:'AdminServer',host:'localhost',port:1234});
+let chara = new Storage.Charas();
+chara.id = 1;
+chara.gold = 1000;
+chara.save();

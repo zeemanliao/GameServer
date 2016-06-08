@@ -1,0 +1,28 @@
+{
+    "name": "game-server",
+    "version": "1.0.0",
+    "description": "Socket Game Server",
+    "main": "app.js",
+    "scripts": {
+        "start": "nodemon -e js -i views -i source -i nod_modeules -d 3 ./index.js",
+        "test": "test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zeemanliao/GameServer.git"
+    },
+    "keywords": [
+        "game",
+        "websocket"
+    ],
+    "author": "zeeman",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/zeemanliao/GameServer/issues"
+    },
+    "homepage": "https://github.com/zeemanliao/GameServer#readme",
+    "dependencies": {
+        "mongoose": "^4.4.20",
+        "socket.io": "^1.4.6"
+    }
+}
